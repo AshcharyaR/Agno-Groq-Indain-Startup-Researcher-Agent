@@ -1,6 +1,6 @@
 # Agno Groq India Startup Research Agent
 
-This repository contains a multi-agent research workflow built with **Agno** and **Groq** for analyzing the Indian startup ecosystem, with a specific focus on AI-driven companies.[file:40]
+This repository contains a multi-agent research workflow built with **Agno** and **Groq** for analyzing the Indian startup ecosystem, with a specific focus on AI-driven companies.
 
 ---
 
@@ -8,8 +8,8 @@ This repository contains a multi-agent research workflow built with **Agno** and
 
 The project implements a two-agent team that:
 
-- Collects up-to-date information about Indian startups, founders, and funding activity using web and news search.[file:40]  
-- Synthesizes the collected information into a concise, structured insight brief suitable for analysts, founders, and investors.[file:40]
+- Collects up-to-date information about Indian startups, founders, and funding activity using web and news search.
+- Synthesizes the collected information into a concise, structured insight brief suitable for analysts, founders, and investors.
 
 The workflow is designed to be a clear, reproducible example of how to build research-oriented AI agents and teams using Agno and Groq.
 
@@ -17,7 +17,7 @@ The workflow is designed to be a clear, reproducible example of how to build res
 
 ## Architecture
 
-The solution is composed of the following core components:[file:40]
+The solution is composed of the following core components:
 
 ### 1. `startup_researcher` (Agent)
 
@@ -26,7 +26,7 @@ The solution is composed of the following core components:[file:40]
 - **Tools:** `DuckDuckGoTools(enable_search=True, enable_news=True)`  
 - **Responsibility:**  
   - Research Indian startups, funding rounds, and founders.  
-  - Prioritize current and India-specific sources for higher relevance.[file:40]
+  - Prioritize current and India-specific sources for higher relevance.
 
 ### 2. `summary_writer` (Agent)
 
@@ -34,7 +34,7 @@ The solution is composed of the following core components:[file:40]
 - **Model:** `Groq(id="llama-3.3-70b-versatile")`  
 - **Responsibility:**  
   - Transform raw research output into a one-page summary.  
-  - Organize content into sections: **Overview**, **Key Players**, **Funding**, and **Opportunities**.[file:40]
+  - Organize content into sections: **Overview**, **Key Players**, **Funding**, and **Opportunities**.
 
 ### 3. `startup_team` (Team)
 
@@ -43,7 +43,7 @@ The solution is composed of the following core components:[file:40]
 - **Name:** `"india_startup_team"`  
 - **Team Instructions:**  
   - First, use `startup_researcher` to collect data on the topic.  
-  - Then, use `summary_writer` to synthesize the findings into a structured brief.[file:40]
+  - Then, use `summary_writer` to synthesize the findings into a structured brief.
 
 The entry point executes the team with a predefined query:
 
@@ -54,16 +54,16 @@ startup_team.print_response(
 )
 ```
 
-[file:40]
+
 
 ---
 
 ## Technology Stack
 
-- **Agno** – Python framework for building and orchestrating agents and teams.[file:40]  
-- **Groq** – High-performance LLM gateway; Llama 3.x models are used for both research and summarization.[file:40]  
-- **DuckDuckGoTools** – Agno toolkit enabling web and news search via DuckDuckGo.[file:40]  
-- **Python** (with `python-dotenv`) – For environment and configuration management.[file:40]
+- **Agno** – Python framework for building and orchestrating agents and teams.  
+- **Groq** – High-performance LLM gateway; Llama 3.x models are used for both research and summarization.  
+- **DuckDuckGoTools** – Agno toolkit enabling web and news search via DuckDuckGo.  
+- **Python** (with `python-dotenv`) – For environment and configuration management.
 
 ---
 
@@ -121,10 +121,10 @@ Run the startup research team script:
 python India_focused_Startup_Research_team.py
 ```
 
-On execution, the team will:[file:40]
+On execution, the team will:
 
-1. Use `startup_researcher` to discover notable Indian AI startups and their focus areas via web and news search.[file:40]  
-2. Pass the findings to `summary_writer` to generate a structured, one-page analytical summary.[file:40]  
+1. Use `startup_researcher` to discover notable Indian AI startups and their focus areas via web and news search.  
+2. Pass the findings to `summary_writer` to generate a structured, one-page analytical summary.  
 3. Stream the final response to the console.
 
 You can modify the query passed to `print_response` to target different verticals or geographies (e.g., Indian fintech, edtech, or climate-tech startups).[]file:40]
